@@ -11,11 +11,12 @@
    <label for="rotulo0">Rótulo</label>
     <input type="text" name="rotulo0">
     <label for="tipo0">Tipo</label>
-    <select name="tipo0">
+    <select name="tipo0" onchange="mostrarOpcoes(this,0)">
         <option value="text">Texto</option>
         <option value="number">Número</option>
         <option value="date">Data</option>
         <option value="select">Opções</option>
+        <input type="text" name="opcoes0" placeholder="Digite opções separadas por vírgula" style="display:none;">
     </select>
 <br>
 </form>
