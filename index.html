@@ -1,26 +1,40 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Tabela de Temperaturas</title>
+    <title>Construtor de Formulário</title>
 </head>
 <body>
+
 <form>
     <h1>Crie seu formulário</h1>
+
     <button type="button" onclick="novoCampo()">Novo campo</button>
-    <button type="button" onclick="visualizarForm()">Concluir</button><hr>
-   <label for="rotulo0">Rótulo</label>
+    <button type="button" onclick="visualizarForm()">Concluir</button>
+    <hr>
+
+    <!-- CAMPO INICIAL -->
+    <label for="rotulo0">Rótulo</label>
     <input type="text" name="rotulo0">
+
     <label for="tipo0">Tipo</label>
     <select name="tipo0" onchange="mostrarOpcoes(this,0)">
         <option value="text">Texto</option>
         <option value="number">Número</option>
         <option value="date">Data</option>
         <option value="select">Opções</option>
-        <input type="text" name="opcoes0" placeholder="Digite opções separadas por vírgula" style="display:none;">
+        <option value="textarea">Texto longo</option>
     </select>
-<br>
+
+    <!-- textarea para opções -->
+    <textarea name="opcoes0" placeholder="Digite as opções (uma por linha ou separadas por vírgula)" style="display:none;" rows="2" cols="30"></textarea>
+
+    <br>
 </form>
+
 <script src="script.js"></script>
-<iframe id="preview" style="width:100%; height:300px;"></iframe>
+
+<iframe id="preview" style="width:100%; height:300px; border:1px solid #000;"></iframe>
+
 </body>
 </html>
