@@ -52,13 +52,13 @@ function novoCampo(){
     x++;
 }
 
-function mostrarOpcoes(select, index){
-    let campoOpcoes = document.getElementsByName("opcoes"+index)[0];
+function mostrarOp(select, index){
+    let campoOp = document.getElementsByName("opcoes"+index)[0];
 
     if(select.value === "select"){
-        campoOpcoes.style.display = "inline";
+        campoOp.style.display = "inline";
     } else {
-        campoOpcoes.style.display = "none";
+        campoOp.style.display = "none";
     }
 }
 
