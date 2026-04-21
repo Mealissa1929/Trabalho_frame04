@@ -67,8 +67,9 @@ function visualizarForm(){
     const iframe = document.getElementById("preview");
     let doc = iframe.contentDocument || iframe.contentWindow.document;
 
-    let html = "<form>";
-
+    let destino = document.getElementById("destino").value;
+    let html = `<form action="${destino}" method="get">`;
+    
     for(let i = 0; i < x; i++){
         let rotuloEl = document.getElementsByName("rotulo"+i)[0];
         let tipoEl = document.getElementsByName("tipo"+i)[0];
