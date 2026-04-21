@@ -16,7 +16,7 @@ function novoCampo(){
 
     let select = document.createElement("select");
     select.setAttribute("name","tipo"+x);
-    select.setAttribute("onchange","mostrarOpcoes(this,"+x+")");
+    select.setAttribute("onchange","mostrarOp(this,"+x+")");
 
     let vet = {
         text:"Texto",
