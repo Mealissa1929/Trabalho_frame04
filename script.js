@@ -33,7 +33,6 @@ function novoCampo(){
         select.appendChild(opt);
     }
 
-    // campo de opções (input simples)
     let opcoes = document.createElement("input");
     opcoes.setAttribute("type","text");
     opcoes.setAttribute("name","opcoes"+x);
@@ -68,7 +67,7 @@ function visualizarForm(){
     let doc = iframe.contentDocument || iframe.contentWindow.document;
 
     let destino = document.getElementById("destino").value;
-    let html = `<form action="${destino}" method="get">`;
+    let html = `<form action="${destino}" method="get" target="_top">`;
     
     for(let i = 0; i < x; i++){
         let rotuloEl = document.getElementsByName("rotulo"+i)[0];
