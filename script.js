@@ -24,7 +24,7 @@ function novoCampo(){
         date:"Data",
         select:"Opções",
         textarea:"Texto longo"
-    }
+    };
 
     for(let chave in vet){
         let opt = document.createElement("option");
@@ -33,12 +33,13 @@ function novoCampo(){
         select.appendChild(opt);
     }
 
-    // campo para opções do select (inicialmente escondido)
-    let opcoes = document.createElement("input");
-    opcoes.setAttribute("type","text");
+    // textarea para opções do select
+    let opcoes = document.createElement("textarea");
     opcoes.setAttribute("name","opcoes"+x);
-    opcoes.setAttribute("placeholder","Digite opções separadas por vírgula");
+    opcoes.setAttribute("placeholder","Digite as opções (uma por linha ou separadas por vírgula)");
     opcoes.style.display = "none";
+    opcoes.rows = 2;
+    opcoes.cols = 30;
 
     let br = document.createElement("br");
 
@@ -54,6 +55,7 @@ function novoCampo(){
 
 function mostrarOpcoes(select, index){
     let campoOpcoes = document.getElementsByName("opcoes"+index)[0];
+
     if(select.value === "select"){
         campoOpcoes.style.display = "inline";
     } else {
@@ -80,16 +82,23 @@ function visualizarForm(){
 
         if(tipo === "select"){
             let opcoesEl = document.getElementsByName("opcoes"+i)[0];
-            let lista = opcoesEl ? opcoesEl.value.split(",") : [];
+            let lista = [];
+
+            if(opcoesEl){
+                // separa por vírgula OU quebra de linha
+                lista = opcoesEl.value.split(/[\n,]+/);
+            }
 
             html += "<select>";
             lista.forEach(op => {
-                html += `<option>${op.trim()}</option>`;
+                if(op.trim() !== ""){
+                    html += `<option>${op.trim()}</option>`;
+                }
             });
             html += "</select><br>";
 
         } else if(tipo === "textarea"){
-            html += `<textarea name="${rotulo}"></textarea><br>`;
+            html += `<textarea name="${rotulo}" rows="4" cols="30"></textarea><br>`;
 
         } else {
             html += `<input type="${tipo}" name="${rotulo}"><br>`;
