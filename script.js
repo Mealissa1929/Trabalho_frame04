@@ -33,13 +33,13 @@ function novoCampo(){
         select.appendChild(opt);
     }
 
-    // textarea para opções do select
-    let opcoes = document.createElement("textarea");
+    // campo de opções (input simples)
+    let opcoes = document.createElement("input");
+    opcoes.setAttribute("type","text");
     opcoes.setAttribute("name","opcoes"+x);
     opcoes.setAttribute("placeholder","Separe por vírgula");
     opcoes.style.display = "none";
-    opcoes.rows = 2;
-    opcoes.cols = 30;
+    opcoes.style.width = "200px";
 
     let br = document.createElement("br");
 
@@ -85,8 +85,7 @@ function visualizarForm(){
             let lista = [];
 
             if(opcoesEl){
-                // separa por vírgula OU quebra de linha
-                lista = opcoesEl.value.split(/[\n,]+/);
+                lista = opcoesEl.value.split(",");
             }
 
             html += "<select>";
