@@ -36,7 +36,7 @@ function novoCampo(){
     // textarea para opções do select
     let opcoes = document.createElement("textarea");
     opcoes.setAttribute("name","opcoes"+x);
-    opcoes.setAttribute("placeholder","Digite as opções (uma por linha ou separadas por vírgula)");
+    opcoes.setAttribute("placeholder","Separe por vírgula");
     opcoes.style.display = "none";
     opcoes.rows = 2;
     opcoes.cols = 30;
