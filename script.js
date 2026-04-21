@@ -103,7 +103,8 @@ function visualizarForm(){
             html += `<input type="${tipo}" name="${rotulo}"><br>`;
         }
     }
-
+    
+    html += `<button type="submit">Enviar</button>`;
     html += "</form>";
 
     doc.open();
